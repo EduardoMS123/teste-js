@@ -27,22 +27,27 @@
             var pesoValido = true;
             var alturaValida = true;
         
-        //condição para definir se peso ou altura são inválidos
-            if(peso <= 0 || peso >= 1000 ){
-                var pesoValido = false;
-                alert("Peso Inválido");
-            }
-        
-            if(altura <= 0 || altura >= 4.00){
-                var alturaValida = false;
-                alert("Altura Inválida");
-            }
-        
             if(pesoValido && alturaValida){
                 var tdIMC = paciente.querySelector(".info-imc")
                 tdIMC.textContent = IMC.toFixed(2);
-        
             }
+
+
+        //condição para definir se peso ou altura são inválidos
+            if(peso <= 0 || peso >= 1000 ){
+                console.log("Peso Inválido");
+                var pesoValido = false;
+                tdIMC.textContent = "Peso Inválido"
+                paciente.classList.add("paciente-invalido");
+            }
+        
+            if(altura <= 0 || altura >= 4.00){
+                console.log("Altura Inválida");
+                var alturaValida = false;
+                paciente.classList.add("paciente-invalido");
+            }
+        
+           
 }
 
 
