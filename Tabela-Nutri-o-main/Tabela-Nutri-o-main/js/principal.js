@@ -6,7 +6,6 @@
     tSecundario.textContent = "Meus clienbinhos";
     titulo.textContent = "TEMM Nutrição";
 
-
     // PACIENTE PAULO, cria a variavel paciente, busca o elemento a partir da classe e altera seu conteudo   
     var pacientes = document.querySelectorAll(".paciente");
    
@@ -32,7 +31,6 @@
                 tdIMC.textContent = IMC.toFixed(2);
             }
 
-
         //condição para definir se peso ou altura são inválidos
             if(peso <= 0 || peso >= 1000 ){
                 console.log("Peso Inválido");
@@ -44,33 +42,11 @@
             if(altura <= 0 || altura >= 4.00){
                 console.log("Altura Inválida");
                 var alturaValida = false;
+                tdIMC.textContent = "Altura Inválida"
                 paciente.classList.add("paciente-invalido");
             }
-        
-           
+                 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
