@@ -4,19 +4,18 @@ function Evolucao(){
     var Decidueye = Dartrix * 2
     var evolucaoFinal = Decidueye + 5
     console.log(evolucaoFinal);
-}
+
+    if(evolucaoFinal >= 25){
+        console.log("Evoluiu ele");
+        
+    }
+    else {
+        console.log("Não Evoluiu ele");
+        
+    }
+};
 
 Evolucao();
-
-if(Evolucao >= 25){
-console.log("Evoluiu ele");
-var evolucaoFinal = true;
-}else{
-    console.log("Não Evoluiu ele");
-    var evolucaoFinal = false;
-}
-
-
 
 
 
