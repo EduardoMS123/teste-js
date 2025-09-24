@@ -48,7 +48,18 @@
                  
 }
 
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+botaoAdicionar.addEventListener('click', 
+            function(event){
+                event.preventDefault();
+               var formulario = document.querySelector("#form-adiciona");
+                console.log(formulario.altura.value);
 
+
+
+
+            }   
+)
 
 
 
