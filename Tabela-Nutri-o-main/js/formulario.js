@@ -7,25 +7,22 @@ botaoAdicionar.addEventListener('click',
                 //pega o id do formulario
                 var formulario = document.querySelector("#form-adiciona");
 
-               
-
                 //cria o elemento <tr>
                 var paciente = dadosPacientesFormulario(formulario);
                 var pacienteTr = criaTr(paciente);
 
-                if(!validarPaciente(paciente)){
-                    console.log("paciente TA ERRADO")
+                var erros = validarPaciente(paciente);
+
+                if(erros.length > 0 ){
+                    var mensagemErro = document.querySelector("#mensagem-erro");
+                    mensagemErro.textContent = erros;
                     return;
                 }
-
-                
 
                 //tabela
                 var tabela = document.querySelector("#tabela-pacientes");
                 tabela.appendChild(pacienteTr);
                 formulario.reset();
-               
-
             }   
 )
 
@@ -38,21 +35,18 @@ botaoAdicionar.addEventListener('click',
             gordura: formulario.gordura.value,
             IMC: calculaIMC(formulario.peso.value, formulario.altura.value)
         }
-        console.log(paciente)
-return paciente;
+            return paciente;
         
     }
 
     function criaTr(paciente){
         var pacienteTr = document.createElement("tr");
         pacienteTr.classList.add("paciente");
-    
         pacienteTr.appendChild(criaTd(paciente.nome, "info-nome"));
         pacienteTr.appendChild(criaTd(paciente.peso, "info-peso"));
         pacienteTr.appendChild(criaTd(paciente.altura, "info-altura"));
         pacienteTr.appendChild(criaTd(paciente.gordura, "info-gordura"));
         pacienteTr.appendChild(criaTd(paciente.IMC, "info-imc"));
-    
         return pacienteTr;
     }
     
@@ -60,16 +54,13 @@ return paciente;
         var td = document.createElement("td");
         td.textContent = dado;
         td.classList.add(classes);
-    
         return td;
     }
 
 function validarPaciente(paciente){
-    if(validarPeso(paciente.peso)){
-        return true;
-    }else{
-        return false;
-    }
+    var erros = [];
+        if(!validarPeso(paciente.peso)) erros.push("Peso INVÁLIDO!!!!");
+        if(!validarAltura(paciente.altura)) erros.push("Altura INVÁLIDA!!!!");
+        return erros;
 }
-
 
