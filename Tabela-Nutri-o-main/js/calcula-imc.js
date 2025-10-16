@@ -62,7 +62,7 @@ function validarPeso(peso){
 }
 
 function validarAltura(altura){
-    if(altura >=0 && altura < 4.00){
+    if(altura > 0 && altura < 4.00){
         return true;
     }else{
         return false;

@@ -12,10 +12,9 @@ botaoAdicionar.addEventListener('click',
                 var pacienteTr = criaTr(paciente);
 
                 var erros = validarPaciente(paciente);
-
+                console.log(erros);
                 if(erros.length > 0 ){
-                    var mensagemErro = document.querySelector("#mensagem-erro");
-                    mensagemErro.textContent = erros;
+                    exibirMensagemErro(erros);
                     return;
                 }
 
@@ -58,9 +57,27 @@ botaoAdicionar.addEventListener('click',
     }
 
 function validarPaciente(paciente){
-    var erros = [];
+    let erros = [];
         if(!validarPeso(paciente.peso)) erros.push("Peso INVÁLIDO!!!!");
         if(!validarAltura(paciente.altura)) erros.push("Altura INVÁLIDA!!!!");
         return erros;
 }
 
+function exibirMensagemErro(erros){
+    //quer adicionar cada item do array
+    //dentro da <ul>
+    //acessa a tag <ul>
+    let ul = document.querySelector("#mensagens-erro");
+
+    erros.forEach(function(erro){
+        //primeiro criar uma <li>
+        let li = document.createElement("li");
+        li.textContent = erro;
+        ul.appendChild(li);
+
+
+
+    })
+
+
+}
