@@ -58,8 +58,18 @@ botaoAdicionar.addEventListener('click',
 
 function validarPaciente(paciente){
     let erros = [];
-        if(!validarPeso(paciente.peso)) erros.push("Peso INVÁLIDO!!!!");
-        if(!validarAltura(paciente.altura)) erros.push("Altura INVÁLIDA!!!!");
+    if(paciente.nome.length == 0) erros.push("O nome não pode estar vazio");
+
+    if(!validarPeso(paciente.peso)) erros.push("O peso inserido é inválido!");
+
+    if(paciente.peso.length == 0) erros.push("O peso não pode estar vazio");
+    
+    if(!validarAltura(paciente.altura)) erros.push("A altura inserida é inválida!");
+    
+    if(paciente.altura.length == 0) erros.push("A altura não pode ser nula");
+
+    if(paciente.gordura.length == 0) erros.push("A gordura não pode ser nula");
+
         return erros;
 }
 
