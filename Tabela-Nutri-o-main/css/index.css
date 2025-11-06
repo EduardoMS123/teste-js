@@ -2,8 +2,9 @@
 	box-sizing: border-box;
  }
 body{
-	font-family: 'DTMSANS';
+	font-family: "DynaPuff", system-ui;
 	font-size: 14px;
+	font-style: italic;
 }
 
 header{
@@ -129,8 +130,15 @@ button[disabled=disabled], button:disabled {
 	height: 30px;
 	width: 300px;
 	margin-bottom: 15px;
+	background-color: #ffb6c1;
+	border-radius: 2%;
+	border-color: black;
+	border-width: 4PX;
+}
 
 
+.invisivel{
+	display: none;
 }
 
 
