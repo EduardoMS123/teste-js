@@ -21,6 +21,10 @@ botaoAdicionar.addEventListener('click',
                 //tabela
                 var tabela = document.querySelector("#tabela-pacientes");
                 tabela.appendChild(pacienteTr);
+
+                let mensagemErro = document.querySelector("#mensagens-erro");
+                mensagemErro.innerHTML = " ";
+
                 formulario.reset();
             }   
 )
